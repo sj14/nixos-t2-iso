@@ -2,7 +2,7 @@
 
 {
   imports = [
-    "${modulesPath}/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+    "${modulesPath}/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix"
     ./common.nix
   ];
 
