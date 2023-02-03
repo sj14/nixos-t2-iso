@@ -26,8 +26,12 @@ jobs:
           split -d result/iso/*.iso -b 1G $iso.iso-part-
           rm result
         done
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      # if: startsWith(github.ref, 'refs/tags/v') && contains(github.ref, '.')
+    # - name: Release
+    #   uses: softprops/action-gh-release@v1
+    #   # if: startsWith(github.ref, 'refs/tags/v') && contains(github.ref, '.')
+    #   with:
+    #     files: "*.iso-part-*"
+    - uses: actions/upload-artifact@v3
       with:
-        files: "*.iso-part-*"
+        name: isos
+        path: "*.iso-part-*"
